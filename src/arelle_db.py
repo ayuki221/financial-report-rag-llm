@@ -45,7 +45,6 @@ with conn.cursor() as cur:
         tbl = ticker.lower()
         ensure_table(cur, tbl)
 
-        # patterns 改成絕對路徑
         patterns = [
             os.path.join(xml_dir, f"{ticker}_*Q?.xml"),
             os.path.join(xml_dir, f"{ticker}_*Q?&Annual.xml")
@@ -53,7 +52,7 @@ with conn.cursor() as cur:
         xbrl_files = []
         for pat in patterns:
             matched = glob.glob(pat)
-            # 這裡才是真正顯示 matched 的數量和檔案清單
+            # 顯示 matched 的數量和檔案清單
             names = [os.path.basename(p) for p in matched]
             print(f"[DEBUG] pattern={os.path.basename(pat)!r} -> found {len(names)} files:")
             xbrl_files.extend(matched)
