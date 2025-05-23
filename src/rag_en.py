@@ -135,7 +135,7 @@ if __name__ == "__main__":
     print("--------------------------")
     query_mode = input("請輸入查詢條件：").strip()
 
-    print("請開始輸入你的問題（輸入 exit 離開）(根據財報判斷apple公司未來的發展如何，詳細敘述理由和看法)：")
+    print("請開始輸入你的問題（輸入 exit 離開）(請使用英文)：")
     while True:
         question = input("\n[你的問題] ")
         if question.lower() in ["exit", "quit", "q"]:
